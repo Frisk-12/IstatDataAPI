@@ -198,22 +198,4 @@ class DataRetriever:
         data_parser = ValuesParser(xml_data)
         return data_parser.parse()
     
-        
-        
-# # Istanza della classe FiltersRetriever con identificatori specifici
-# fr = FiltersRetriever("101_148", "DCSP_RICAREA")
-
-# # Recupero del dizionario dei filtri (opzionale)
-# #filters_dict = fr.get_filters_dictionary()
-
-# # Esempio di dizionario dei filtri
-# filters_example = {
-#     # 0: "A",
-#     # 1: '0010',
-#     # 6: "ITG2",
-#     # 9: "HO"
-# }
-
-# # Generazione della stringa URL basata sui filtri
-# df = fr.get_data(filters_example)
-# print(df.head())
+    
