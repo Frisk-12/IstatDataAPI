@@ -1,7 +1,7 @@
 # Descrizione di IstatDataAPI
 
 IstatDataAPI, costruita con Flask, espone un'API che consente di recuperare informazioni relative a flussi di dati, filtri e dati specifici direttamente da ISTAT. È progettata per interagire con sistemi che gestiscono dati complessi e offre una serie di endpoint per eseguire operazioni di estrazione e filtraggio dei dati. L'API è costruita in modo da essere facilmente estendibile e utilizzabile in contesti di analisi e gestione dei dati.
-[Questa la guida utilizzata](https://ondata.github.io/guida-api-istat/)
+Di seguito la guida fornita da OnData sul progetto SDMX: [clicca qui](https://ondata.github.io/guida-api-istat/)
 
 ## Funzionalità Principali
 
