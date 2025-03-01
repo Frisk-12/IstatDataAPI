@@ -1,6 +1,7 @@
 # Descrizione di IstatDataAPI
 
-Questa applicazione Python, costruita con Flask, espone un'API che consente di recuperare informazioni relative a flussi di dati, filtri e dati specifici. È progettata per interagire con sistemi che gestiscono dati complessi e offre una serie di endpoint per eseguire operazioni di estrazione e filtraggio dei dati. L'API è costruita in modo da essere facilmente estendibile e utilizzabile in contesti di analisi e gestione dei dati.
+IstatDataAPI, costruita con Flask, espone un'API che consente di recuperare informazioni relative a flussi di dati, filtri e dati specifici direttamente da ISTAT. È progettata per interagire con sistemi che gestiscono dati complessi e offre una serie di endpoint per eseguire operazioni di estrazione e filtraggio dei dati. L'API è costruita in modo da essere facilmente estendibile e utilizzabile in contesti di analisi e gestione dei dati.
+[Questa la guida utilizzata](https://ondata.github.io/guida-api-istat/)
 
 ## Funzionalità Principali
 
@@ -11,7 +12,7 @@ Questo endpoint consente di ottenere i flussi di dati disponibili nel sistema. L
 
 **Metodo:** `GET`  
 **Parametri (opzionali):**
-- `string`: stringa per filtrare i flussi di dati
+- `string`: stringa per filtrare i flussi di dati per testo
 
 **Risposta:**
 Restituisce una lista di flussi di dati in formato JSON.
@@ -103,6 +104,7 @@ POST /api/data
 ```
 
 #### Esempio di Risposta
+```
 [  
   {
     "ATTCONNESSE": "ALL",
@@ -124,5 +126,5 @@ POST /api/data
     "TIT_POSSES": "ALL",
     "TIT_POSSESUSO_MEZZIMEC": "THIRD_FARM"
   },
-  
 ]
+```
