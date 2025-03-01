@@ -91,8 +91,8 @@ Questo endpoint consente di recuperare i dati specifici associati a un flusso di
 Restituisce i dati specifici del flusso richiesto, in formato JSON, come un array di record. Ogni record è rappresentato come un dizionario con le colonne del flusso di dati come chiavi e i relativi valori come valori.
 
 #### Esempio di richiesta:
-```json
 POST /api/data
+```json
 {
   "dataflow_id": 1,
   "ref_id": 10,
