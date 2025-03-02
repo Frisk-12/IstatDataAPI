@@ -73,6 +73,8 @@ class PatternMatcher:
             parts.extend([""] * (len(self.columns) - len(parts)))
         # Se il numero di parti è maggiore delle colonne, solleva un errore
         elif len(parts) > len(self.columns):
+            print(f"COLONNE: {self.columns}")
+            print(f"N. COLONNE: {len(self.columns)} VS N. PARTS: {len(parts}")
             raise ValueError("Il pattern contiene più elementi rispetto alle colonne specificate.")
         
         # Inizializzo una maschera con True per tutte le righe
