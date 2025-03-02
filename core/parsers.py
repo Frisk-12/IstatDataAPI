@@ -40,7 +40,7 @@ class DataflowParser:
         return pd.DataFrame(dataflows)
     
     def filter_by_name(self, df: pd.DataFrame, substring: str) -> pd.DataFrame:
-        return df[df['Nome IT'].str.contains(substring, na=False)]
+        return df[df['Nome IT'].str.contains(substring, case=False, na=False, regex=False)]
 
 class SeriesParser:
     """
