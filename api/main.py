@@ -18,7 +18,7 @@ from services.dataflow_service import DataflowRetriever, FiltersRetriever, DataR
 app = Flask(__name__)
 CORS(app)
 
-logging.basicConfig(level=logging.INFO)
+#logging.basicConfig(level=logging.INFO)
 
 @app.route("/")
 def get_dataflows():
@@ -41,7 +41,7 @@ def get_index_data():
 @app.route("/api/filters", methods=["GET"])
 def get_filter_dict():
     try: 
-        logging.info("API /api/filters called")
+        #logging.info("API /api/filters called")
         dataflow_id = request.args.get("dataflow_id")
         ref_id = request.args.get("ref_id")
         
@@ -51,7 +51,7 @@ def get_filter_dict():
         fr = FiltersRetriever(dataflow_id, ref_id)
         filters_dict = fr.get_filters_dictionary()
         
-        logging.info("Received response in %s seconds", time.time() - start_time)
+        #logging.info("Received response in %s seconds", time.time() - start_time)
         return jsonify(filters_dict)
     except ValueError as e:
         return jsonify({"error": str(e)}), 500
