@@ -75,7 +75,7 @@ def get_data():
             return jsonify({"error": "Invalid input, expected a dictionary"}), 400
 
         try:
-            filters_dict = {int(k): v for k, v in filters_raw.items()}
+            filters_dict = {int(k): v for k, v in filters_dict.items()}
         except ValueError:
             return jsonify({"error": "Le chiavi dei filtri devono essere convertibili in interi"}), 400
 
