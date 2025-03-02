@@ -18,7 +18,7 @@ from core.parsers import (
     ValuesParser
 )
 from core.utils import StringaFiltroGenerator
-from utils import PatternMatcher
+from core.utils import PatternMatcher
 
 class DataflowRetriever:
     """Classe per il recupero e l'analisi dei dataflow da SDMX."""
