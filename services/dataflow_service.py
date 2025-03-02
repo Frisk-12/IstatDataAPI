@@ -191,6 +191,7 @@ class DataRetriever:
         """
         
         string = self.generate_filter_string()
+        print(f"Filtered subURL string: {string}")
         url_data = f"https://sdmx.istat.it/SDMXWS/rest/data/{self.dataflow_id}/{string}"
         downloader_data = Downloader(url_data)
         xml_data = downloader_data.download()
