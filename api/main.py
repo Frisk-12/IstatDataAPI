@@ -40,7 +40,8 @@ def get_index_data():
     
 @app.route("/api/filters", methods=["GET"])
 def get_filter_dict():
-    try: 
+    try:
+        start_time = time.time()
         logging.info("API /api/filters called")
         dataflow_id = request.args.get("dataflow_id")
         ref_id = request.args.get("ref_id")
