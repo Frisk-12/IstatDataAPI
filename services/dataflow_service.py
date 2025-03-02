@@ -18,7 +18,7 @@ from core.parsers import (
     ValuesParser
 )
 from core.utils import StringaFiltroGenerator
-
+from utils import PatternMatcher
 
 class DataflowRetriever:
     """Classe per il recupero e l'analisi dei dataflow da SDMX."""
@@ -193,10 +193,17 @@ class DataRetriever:
         string = self.generate_filter_string()
         url_data = f"https://sdmx.istat.it/SDMXWS/rest/data/{self.dataflow_id}/{string}"
         print(f"Filtered URL string: {url_data}")
+
+        _, _, df = self.fr._parse_series()
+        matcher = PatternMatcher(df)
+    
+        if not matcher.match(string):
+            raise ValueError("La combinazione selezionata non genera risultati. Prova a modificarla o ad allentare i filtri applicati.")  
         downloader_data = Downloader(url_data)
         xml_data = downloader_data.download()
             
         data_parser = ValuesParser(xml_data)
         return data_parser.parse()
+    
     
     
