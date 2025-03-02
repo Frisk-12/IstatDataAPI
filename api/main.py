@@ -70,10 +70,15 @@ def get_data():
         
         if not dataflow_id or not ref_id:
             return jsonify({"error": "I parametri dataflow_id e ref_id sono obbligatori"}), 400
-        
 
         if not isinstance(filters_dict, dict):
             return jsonify({"error": "Invalid input, expected a dictionary"}), 400
+
+        try:
+            filters_dict = {int(k): v for k, v in filters_raw.items()}
+        except ValueError:
+            return jsonify({"error": "Le chiavi dei filtri devono essere convertibili in interi"}), 400
+
         
         data_ret = DataRetriever(dataflow_id, ref_id, filters_dict)
         df = data_ret.get_data()
