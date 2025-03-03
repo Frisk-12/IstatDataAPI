@@ -18,6 +18,7 @@ class StringaFiltroGenerator:
             try:
                 output_dict[int(key)] = value
             except ValueError:
+                print(f"KEY '{key}' NOT TRASFORMED IN INTEGER")
                 output_dict[key] = value  # Keep original key if conversion fails
         return output_dict
     
@@ -35,7 +36,7 @@ class StringaFiltroGenerator:
             else:
                 # Se non è applicato, manteniamo solo il punto
                 slots.append(".")
-        print(f"SUBSTRING RETURNED: {''.join(slots)}")
+        print(f"SUBSTRING RETURNED: {''.join(slots)}\nN. FILTERS: {self.tot_filters}\nFILTERS: {self.applicati}")
         return "".join(slots)
 
 import pandas as pd
