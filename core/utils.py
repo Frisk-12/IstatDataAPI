@@ -9,14 +9,24 @@ Created on Sat Mar  1 12:35:26 2025
 class StringaFiltroGenerator:
     def __init__(self, tot_filters, applicati):
         self.tot_filters = tot_filters
-        self.applicati = applicati
+        self.applicati = self.convert_keys_to_int(applicati)
+
+    def convert_keys_to_int(self, input_dict):
+        """Converts dictionary keys from strings to integers where possible."""
+        output_dict = {}
+        for key, value in input_dict.items():
+            try:
+                output_dict[int(key)] = value
+            except ValueError:
+                output_dict[key] = value  # Keep original key if conversion fails
+        return output_dict
     
     def generate_url_string(self):
         slots = []
         if not bool(self.applicati):
             return "." * (self.tot_filters - 1)
         for i in range(self.tot_filters):
-            if str(i) in self.applicati.keys():
+            if i in self.applicati.keys():
                 # Se il filtro è applicato in questo slot, lo inseriamo prima del punto
                 if i == self.tot_filters-1:
                     slots.append(str(self.applicati[i]))
