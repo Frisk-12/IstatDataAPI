@@ -23,7 +23,7 @@ class StringaFiltroGenerator:
             else:
                 # Se non è applicato, manteniamo solo il punto
                 slots.append(".")
-        print(f"SUBSTRING RETURNED: {"".join(slots)}")
+        print(f"SUBSTRING RETURNED: {''.join(slots)}")
         return "".join(slots)
 
 import pandas as pd
