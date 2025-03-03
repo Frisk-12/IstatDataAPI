@@ -12,7 +12,6 @@ class StringaFiltroGenerator:
         self.applicati = applicati
     
     def generate_url_string(self):
-        print(f"FILTERS RECEIVED: {self.applicati}")
         slots = []
         for i in range(self.tot_filters):
             if i in self.applicati.keys():
@@ -24,6 +23,7 @@ class StringaFiltroGenerator:
             else:
                 # Se non è applicato, manteniamo solo il punto
                 slots.append(".")
+        print(f"SUBSTRING RETURNED: {"".join(slots)}")
         return "".join(slots)
 
 import pandas as pd
