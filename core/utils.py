@@ -12,6 +12,7 @@ class StringaFiltroGenerator:
         self.applicati = applicati
     
     def generate_url_string(self):
+        print(f"FILTERS RECEIVED: {applicati}")
         slots = []
         for i in range(self.tot_filters):
             if i in self.applicati.keys():
