@@ -13,8 +13,10 @@ class StringaFiltroGenerator:
     
     def generate_url_string(self):
         slots = []
+        if not bool(self.applicati):
+            return "." * (self.tot_filters - 1)
         for i in range(self.tot_filters):
-            if i in self.applicati.keys():
+            if str(i) in self.applicati.keys():
                 # Se il filtro è applicato in questo slot, lo inseriamo prima del punto
                 if i == self.tot_filters-1:
                     slots.append(str(self.applicati[i]))
