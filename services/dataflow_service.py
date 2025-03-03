@@ -164,7 +164,6 @@ class FiltersRetriever:
         Returns:
             Una stringa contenente l'URL generato.
         """
-        print(f"FILTERS RECEIVED: {filters}")
         tot_filters = len(self.get_filters())
         generator = StringaFiltroGenerator(tot_filters, filters)
         return generator.generate_url_string()
