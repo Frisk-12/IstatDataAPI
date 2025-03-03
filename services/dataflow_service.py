@@ -123,10 +123,11 @@ class FiltersRetriever:
         """
         valid_filters = self.get_valid_filters()
         df_filters = self._parse_filter_structure()
-        return df_filters.loc[
-            df_filters['Dimension ID'].isin(valid_filters),
-            ['Dimension ID', 'Codelist ID']
-        ]
+        #return df_filters.loc[
+        #    df_filters['Dimension ID'].isin(valid_filters),
+        #    ['Dimension ID', 'Codelist ID']
+        #]
+        return df_filters[['Dimension ID', 'Codelist ID']]
 
     def get_filters_dictionary(self) -> Dict[str, List[Dict[str, Any]]]:
         """
