@@ -91,6 +91,7 @@ class FiltersRetriever:
 
     def get_filters(self) -> pd.Index:
         """Ritorna le colonne (filtri) presenti nel dataframe della serie."""
+        print(f"DF SERIES COLUMNS: {self.df_series.columns}")
         return self.df_series.columns
 
     def get_valid_filters(self) -> List[str]:
